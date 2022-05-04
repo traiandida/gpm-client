@@ -6,11 +6,7 @@ function useFetch({api, method, path, data = null, config = null}) {
 	const [isLoading, setIsLoading] = useState(true);
 	
 	useEffect(() => {
-
-		setTimeout(() => {
-			
-		}, 1000);
-
+		
 		( async () => {
 			try{
 				api[method](path, JSON.parse(config), JSON.parse(data))
@@ -25,7 +21,6 @@ function useFetch({api, method, path, data = null, config = null}) {
 				setError(err);
 			}
 		})()
-
 
 		
 	},[api, method, path, data, config])
