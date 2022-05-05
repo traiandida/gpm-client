@@ -1,19 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { treeApi } from './api';
 import Tree from './components/Tree';
 import useFetch from './hooks/useFetch';
 import FilePreview from './components/FilePreview';
+import { PreviewFileProvider } from './context/PreviewFileContext';
 
 import { Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { PreviewFileContext } from './context/PreviewFileContext';
-
 
 
 function App() {
-
-  const [previewFile, setPreviewFile] = useState(null)
     
   const {response, isLoading, error }= useFetch({
     api: treeApi,
@@ -34,7 +31,7 @@ function App() {
 
 
   return (
-    <PreviewFileContext.Provider value={{previewFile, setPreviewFile}}>
+    <PreviewFileProvider>
       <div className='container'>
         <h1 className='text-center'>GPM-Client</h1>
         <div className='row border' style={{height:'80vh'}}>
@@ -43,12 +40,12 @@ function App() {
             {renderTree()}
           </div>  
           <div className='col'>
-            <h5 className='text-center mt-3'>File preview</h5>
+            
             <FilePreview />
           </div>  
         </div>
       </div>
-    </PreviewFileContext.Provider>        
+    </PreviewFileProvider>    
   )
 }
 export default App
