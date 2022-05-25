@@ -1,5 +1,5 @@
 import React, { useContext} from 'react'
-import { PreviewFileContext } from '../../context/PreviewFileContext'
+import {PreviewFileContext} from 'context/PreviewFileContext'
 
 function FilePreview() {
   

@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react'
 import axios from 'axios';
 import "./Tree.css"
-import { API } from '../../constants';
-import { PreviewFileContext } from '../../context/PreviewFileContext';
+import { API } from 'constants';
+import { PreviewFileContext } from 'context/PreviewFileContext';
+
+
 
 
 function Tree({node}) {

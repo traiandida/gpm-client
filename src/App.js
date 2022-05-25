@@ -1,9 +1,9 @@
 import React from 'react'
 import { treeApi } from './api';
-import Tree from './components/Tree';
-import useFetch from './hooks/useFetch';
-import FilePreview from './components/FilePreview';
-import { PreviewFileProvider } from './context/PreviewFileContext';
+import Tree from 'components/Tree';
+import useFetch from 'hooks/useFetch';
+import FilePreview from 'components/FilePreview';
+import { PreviewFileProvider } from 'context/PreviewFileContext';
 
 import { Spinner } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
